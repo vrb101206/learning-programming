@@ -1,1 +1,42 @@
+Algoritmo geometric_areas
+//# Declaración de constante
+	pi_valve<-3.1416
+
+//Declaración de variables para las dimensiones de las figuras
+	Escribir "Introduce el valor del lado del cuadrado:"
+	Leer lado
+	
+	Escribir "Introduce la base del rectángulo:"
+	Leer baseRect
+	
+	Escribir "Introduce la altura del rectángulo:"
+	Leer alturaRect
+	
+	Escribir "Introduce la base del triángulo:"
+	Leer baseTri
+	
+	Escribir "Introduce la altura del triángulo:"
+	Leer alturaTri
+	
+	Escribir "Introduce el radio del círculo:"
+	Leer radio
+	
+	// Cálculo de las áreas
+	areaCuadrado <- lado * lado
+	areaRectangulo <- baseRect * alturaRect
+	areaTriangulo <- (baseTri * alturaTri) / 2
+	areaCirculo <- PI * (radio * radio)
+	
+	// Cálculo del total de áreas
+	totalAreas <- areaCuadrado + areaRectangulo + areaTriangulo + areaCirculo
+	
+	// Mostrar los resultados
+	Escribir "Área del cuadrado: ", areaCuadrado
+	Escribir "Área del rectángulo: ", areaRectangulo
+	Escribir "Área del triángulo: ", areaTriangulo
+	Escribir "Área del círculo: ", areaCirculo
+	Escribir "Total de las áreas: ", totalAreasmo
+FinAlgoritmo
+
+	
 
