@@ -1,0 +1,59 @@
+import random
+
+# --- Entrada de jugadores ---
+while True:
+    jugadores = int(input("Cantidad de jugadores (2-4): "))
+    if 2 <= jugadores <= 4:
+        break
+    print(": entre 2 y 4 jugadores.")
+
+# --- Selección de nivel ---
+print("\nNivel de tablero:")
+print("4. Experto (100)")
+
+niveles = { 4: 100}
+
+while True:
+    nivel = int(input("Elige nivel (4): "))
+    if nivel in nivel:
+        meta = nivel[nivel]
+        break
+    print("Nivel inválido.")
+
+# --- Inicialización ---
+posiciones = [0] * jugadores
+dobles_consecutivos = [0] * jugadores
+
+turno = 0
+
+print("\n--- INICIO DEL JUEGO ---\n")
+
+# --- Juego ---
+while True:
+    input(f"Jugador {turno + 1} presiona Enter para lanzar dados... ")
+
+    d1 = random.randint(1, 6)
+    d2 = random.randint(1, 6)
+
+    print(f"Dados: {d1} y {d2}")
+
+    # mover jugador
+    posiciones[turno] += (d1 + d2)
+
+    print(f"Posición Jugador {turno + 1}: {posiciones[turno]}")
+
+    # regla de dobles consecutivos
+    if d1 == d2:
+        dobles_consecutivos[turno] += 1
+    else:
+        dobles_consecutivos[turno] = 0
+
+    # ganar por 3 dobles consecutivos
+    if dobles_consecutivos[turno] == 3:
+        print(f"\n¡Jugador {turno + 1} gana por 3 dobles consecutivos!")
+        break
+
+    # ganar por meta
+    if posiciones[turno] >= meta:
+        print(f"\n¡Jugador {turno + 1} llega a la meta y gana!")
+        break
