@@ -1,1 +1,33 @@
 
+def calcularPromedio(nota1, nota2, nota3):
+    return (nota1 + nota2 + nota3) / 3
+
+
+def determinarEstado(promedio):
+    if promedio >= 3:
+        return "Aprobó"
+    else:
+        return "Reprobó"
+
+
+def mostrarDatos(nombre, nota1, nota2, nota3, promedio, estado):
+    print("\n--- DATOS DEL ESTUDIANTE ---")
+    print("Nombre:", nombre)
+    print("Nota 1:", nota1)
+    print("Nota 2:", nota2)
+    print("Nota 3:", nota3)
+    print("Promedio:", promedio)
+    print("Estado:", estado)
+
+
+# Programa principal
+nombre = input("Ingresar un nombre: ")
+
+nota1 = float(input("Ingresar nota 1: "))
+nota2 = float(input("Ingresar nota 2: "))
+nota3 = float(input("Ingresar nota 3: "))
+
+promedio = calcularPromedio(nota1, nota2, nota3)
+estado = determinarEstado(promedio)
+
+mostrarDatos(nombre, nota1, nota2, nota3, promedio, estado)
